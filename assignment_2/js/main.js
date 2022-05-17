@@ -1,10 +1,10 @@
 function validateForm() {
     $("#form-alert").hide();
     let dataObject = {}
-    let n_calls = 0
-    let loop_passed = false
+    let loop_passed = false;
     console.log("before for");
     $("form").children("div").each( function() {
+        dataObject[$(this).children('label').text()] = $(this).children('input').val();
         if ($(this).children('input').val() === "") {
             $("#form-alert").show();
             console.log("for loop");
@@ -13,14 +13,14 @@ function validateForm() {
         })
     if (loop_passed === true) {
         console.log("empty");
-        return
+        return [false]
     }
     if (!/[^a-z]/i.test($("#InputName").val()) === false || !/[^a-z]/i.test($("#InputCity").val()) === false) {
         console.log("input field has non-letters")
         $("#form-alert").text("Your name and city can only contain letters.").show();
         // console.log(!/[^a-z]/i.test($("#InputName").val()))
         // console.log(!/[^a-z]/i.test($("#InputCity").val()))
-        return
+        return [false]
     }
     if (/^\d+$/.test($("#InputAge").val()) === false || /^\d+$/.test($("#InputPhoneNumber").val()) === false) {
         console.log("input has non-numbers")
@@ -29,9 +29,9 @@ function validateForm() {
         // console.log($("#InputPhoneNumber").val())
         // console.log(/^\d+$/.test($("#InputAge").val()))
         // console.log(/^\d+$/.test($("#InputPhoneNumber").val()))
-        return
+        return [false]
     }
-    dataObject[$(this).children('label').text()] = $(this).children('input').val();
+    return [true, dataObject];
 };
 
 function writeFormData(){
@@ -40,6 +40,9 @@ function writeFormData(){
 
 $(function() {
     $("#SubmitButton").on('click', function () {
-        validateForm(false)
+        if (validateForm()[0] === true) {
+            console.log(validateForm()[1])
+            $("#form-content").show();
+        }
     })
 });
