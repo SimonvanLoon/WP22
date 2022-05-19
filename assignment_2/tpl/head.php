@@ -19,8 +19,6 @@
                 if ($title == $active){ ?>
                     <li class="nav-item active">
                         <a class="nav-link" href="<?= $url ?>"><?= $title ?></a>
-                        <p> <?= $url ?> </p>
-                        <p><?= $title ?></p>
                     </li>
                 <?php } else {?>
                     <li class="nav-item">
