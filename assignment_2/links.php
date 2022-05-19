@@ -17,6 +17,7 @@ include __DIR__ . '/tpl/body-start.php';
     <div class="col-md-12">
         <h1>Links</h1>
     </div>
+
 <?php
 include __DIR__ . '/tpl/body-end.php';
 /* Footer */
