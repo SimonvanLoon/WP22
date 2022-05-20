@@ -41,11 +41,8 @@ $(function() {
     $("#SubmitButton").on('click', function () {
         let validatedForm = validateForm();
         if (validatedForm[0] === true) {
-            let n = 0;
-            // $.each( validatedForm[1], function( key, value) {
             $("#form-table").children("tbody").children("tr").each ( function (){
                 $(this).children("td").text(validatedForm[1][$(this).children("th").text()]);
-                n += 1;
             })
             $("#form-content").show();
 
