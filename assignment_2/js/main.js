@@ -54,4 +54,16 @@ $(function() {
     $("#EraseButton").on('click', function () {
         writeFormData();
     })
+    $("#link-tab").on('click', function () {
+        $("#link-tab").addClass("active");
+        $("#contact-tab").removeClass("active");
+        $("#contact").hide();
+        $("#links").show();
+    })
+    $("#contact-tab").on('click', function () {
+        $("#link-tab").removeClass("active");
+        $("#contact-tab").addClass("active");
+        $("#links").hide();
+        $("#contact").show();
+    })
 });
