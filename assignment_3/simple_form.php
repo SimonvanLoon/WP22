@@ -14,18 +14,23 @@ include __DIR__ . '/tpl/head.php';
 include __DIR__ . '/tpl/body_start.php';
 ?>
 
-<?php
-p_print($_GET);
-?>
+<?php if(isset($_GET['submit'])){ ?>
+    <h1>Welcome, <?= $_GET['name'] ?></h1>
+<?php } ?>
+
 
 <div class="row wp-row">
     <div class="col-md-12">
-        <form method="GET">
-            <label for="fname">Firstname:</label>
-            <input type="text" id="fname" name="firstname">
-            <label for="lname">Lastname:</label>
-            <input type="text" id="lname" name="lastname">
-            <button type="submit">Send</button>
+        <form method="GET" action="simple_form.php">
+            <div class="form-group">
+                <label for="fname">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="lname">Place:</label>
+                <input type="text" id="place" name="place">
+            </div>
+            <button type="submit" name="submit">Send</button>
         </form>
     </div>
 </div>
