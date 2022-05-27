@@ -11,7 +11,9 @@ $navigation = array(
         'Simple Form' => '/WP22/assignment_3/simple_form.php'
     )
 );
-include __DIR__ . '/tpl/head.php';
+include __DIR__ . '/tpl/head.php';?>
+    <script type="application/javascript" src="scripts/leapyear.js"></script>
+<?php
 include __DIR__ . '/tpl/body_start.php';
 ?>
 
