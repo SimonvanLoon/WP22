@@ -16,8 +16,13 @@ include __DIR__ . '/tpl/body_start.php';
 
 <?php if(isset($_GET['submit'])){ ?>
     <h1>Welcome, <?= $_GET['name'] ?></h1>
-<?php } ?>
+<?php if ($_GET['place'] == "Amsterdam") { ?>
+    <p>You're from the capital of the Netherlands!</p>
 
+<?php } else { ?>
+    <p>You're from <?= $_GET['place'] ?>!</p>
+<?php } ?>
+<?php } ?>
 
 <div class="row wp-row">
     <div class="col-md-12">
