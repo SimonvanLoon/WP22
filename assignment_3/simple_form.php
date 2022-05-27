@@ -28,11 +28,11 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="col-md-12">
         <form method="GET" action="simple_form.php">
             <div class="form-group">
-                <label for="fname">Name</label>
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name">
             </div>
             <div class="form-group">
-                <label for="lname">Place:</label>
+                <label for="place">Place:</label>
                 <input type="text" id="place" name="place">
             </div>
             <button type="submit" name="submit">Send</button>
