@@ -17,9 +17,9 @@ include __DIR__ . '/tpl/head.php';?>
 include __DIR__ . '/tpl/body_start.php';
 ?>
 
-<?php if(isset($_GET['submit'])){ ?>
-    <h1>Welcome, <?= $_GET['name'] ?></h1>
-    <?php if ($_GET['place'] == "Groningen") { ?>
+<?php if (!empty($_POST)){ ?>
+    <h1>Welcome, <?= $_POST['name'] ?></h1>
+    <?php if ($_POST['place'] == "Groningen") { ?>
         <p>Greetings, stadjer!</p>
     <?php } ?>
     <table class="table">
@@ -32,31 +32,32 @@ include __DIR__ . '/tpl/body_start.php';
         <tbody>
         <tr>
             <td>2024</td>
-            <td><?=$_GET['name'] + 2 ?></td>
+            <td><?=$_POST['name'] + 2 ?></td>
         </tr>
         <tr>
             <td>2028</td>
-            <td><?=$_GET['name'] + 6 ?></td>
+            <td><?=$_POST['name'] + 6 ?></td>
         </tr>
         <tr>
             <td>2032</td>
-            <td><?=$_GET['name'] + 10 ?></td>
+            <td><?=$_POST['name'] + 10 ?></td>
         </tr>
         <tr>
             <td>2036</td>
-            <td><?=$_GET['name'] + 14 ?></td>
+            <td><?=$_POST['name'] + 14 ?></td>
         </tr>
         <tr>
             <td>2044</td>
-            <td><?=$_GET['name'] + 18 ?></td>
+            <td><?=$_POST['name'] + 18 ?></td>
         </tr>
         </tbody>
     </table>
-<?php } ?>
+    <?php unset($_POST);
+ } ?>
 
 <div class="row wp-row">
     <div class="col-md-12">
-        <form method="GET" action="leapyear.php">
+        <form method="POST" action="leapyear.php">
             <div class="form-group">
                 <label for="fullname">Name</label>
                 <input type="text" class="form-control is-valid" id="fullname" name="fullname" placeholder="Jan Jansen"required>
@@ -97,7 +98,7 @@ include __DIR__ . '/tpl/body_start.php';
                     Please enter your place of residence
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit" name="submit">Send</button>
+            <div id="submit" class="btn btn-primary">Show me!</div>
         </form>
     </div>
 </div>
