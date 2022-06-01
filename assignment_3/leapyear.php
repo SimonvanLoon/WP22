@@ -3,10 +3,11 @@
 /* Header */
 $page_title = 'Webprogramming Assignment 3';
 $navigation = array(
-    'active' => 'Simple Form',
+    'active' => 'Leap Year',
     'items' => array(
         'News' => '/WP22/assignment_3/index.php',
         'Add news item' => '/WP22/assignment_3/news_add.php',
+        'Edit news item'  => '/WP22/assignment_3/news_edit.php',
         'Leap Year' => '/WP22/assignment_3/leapyear.php',
         'Simple Form' => '/WP22/assignment_3/simple_form.php'
     )
