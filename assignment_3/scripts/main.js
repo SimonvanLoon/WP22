@@ -18,7 +18,7 @@ function removeArticle(rm_btn) {
     });
 }
 
-(function() {
+$(function() {
     print_latest_news();
     window.setInterval(function () {
         print_latest_news();

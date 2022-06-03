@@ -19,7 +19,7 @@ include __DIR__ . '/tpl/body_start.php';
     <div class="row">
         <div class="col-md-12" id="news_container">
             <div class="card text-center news-card">
-                <div class="card-header"><?php >.</div>
+                <div class="card-header"> <?php var_dump($export_data)?></div>
                 <div class="card-body"><h5 class="card-title">Peilingwijzer: VVD en ...</h5>
                     <p class="card-text">In de nieuwste Peilingwijzer zijn de VVD en ...</p>
                     <div class=“row">
