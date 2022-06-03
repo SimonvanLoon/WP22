@@ -19,7 +19,7 @@ include __DIR__ . '/tpl/body_start.php';
 ?>
 
 <?php if (!empty($_POST)){ ?>
-    <h1>Welcome, <?= $_POST['name'] ?></h1>
+    <h1>Welcome, <?= $_POST['fullname'] ?></h1>
     <?php if ($_POST['place'] == "Groningen") { ?>
         <p>Greetings, stadjer!</p>
     <?php } ?>
@@ -33,28 +33,27 @@ include __DIR__ . '/tpl/body_start.php';
         <tbody>
         <tr>
             <td>2024</td>
-            <td><?=$_POST['name'] + 2 ?></td>
+            <td><?=$_POST['age'] + 2 ?></td>
         </tr>
         <tr>
             <td>2028</td>
-            <td><?=$_POST['name'] + 6 ?></td>
+            <td><?=$_POST['age'] + 6 ?></td>
         </tr>
         <tr>
             <td>2032</td>
-            <td><?=$_POST['name'] + 10 ?></td>
+            <td><?=$_POST['age'] + 10 ?></td>
         </tr>
         <tr>
             <td>2036</td>
-            <td><?=$_POST['name'] + 14 ?></td>
+            <td><?=$_POST['age'] + 14 ?></td>
         </tr>
         <tr>
             <td>2044</td>
-            <td><?=$_POST['name'] + 18 ?></td>
+            <td><?=$_POST['age'] + 18 ?></td>
         </tr>
         </tbody>
     </table>
-    <?php unset($_POST);
- } ?>
+ <?php }?>
 
 <div class="row wp-row">
     <div class="col-md-12">
@@ -71,7 +70,7 @@ include __DIR__ . '/tpl/body_start.php';
             </div>
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="text" class="form-control is-valid" id="age" placeholder="69"name="name" required>
+                <input type="text" class="form-control is-valid" id="age" placeholder="69"name="age" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
